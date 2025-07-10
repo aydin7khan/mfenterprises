@@ -1,0 +1,595 @@
+/* Global CSS Variables */
+:root {
+  /* Main theme colors - Playful Children's Theme */
+  --primary-color: #FF6B6B; /* Bright coral red */
+  --secondary-color: #4ECDC4; /* Turquoise */
+  --accent-color: #FFD166; /* Bright yellow */
+
+  /* Additional playful colors */
+  --playful-purple: #845EC2;
+  --playful-green: #59B791;
+  --playful-blue: #00B4D8;
+  --playful-pink: #FF85A1;
+  --playful-orange: #FF9A3C;
+
+  /* New playful theme colors */
+  --theme-dark: #845EC2; /* Purple */
+  --theme-medium: #00B4D8; /* Blue */
+  --theme-light: #F9F9F9; /* Light background */
+  --theme-accent: #FFD166; /* Yellow */
+  --theme-gradient-1: linear-gradient(135deg, #FF85A1, #FF9A3C); /* Pink to orange */
+  --theme-gradient-2: linear-gradient(135deg, #4ECDC4, #59B791); /* Turquoise to green */
+
+  /* Background colors */
+  --background-color: #F9F9F9;
+  --background-alt: #F0F0F0;
+  --background-dark: #E5E5E5;
+  --card-bg: #ffffff;
+
+  /* Text colors */
+  --text-color: #2d3748;
+  --text-light: #4a5568;
+  --text-lighter: #718096;
+  --light-text-color: #f8f9fa;
+
+  /* Utility colors */
+  --border-color: #e2e8f0;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --error-color: #c0392b;
+  --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+
+  /* Other variables */
+  --transition-speed: 0.3s;
+  --border-radius: 4px;
+  --card-radius: 10px;
+  --max-width: 1200px;
+  --header-height: 80px;
+
+  /* Responsive breakpoints */
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+
+  /* Mobile header height */
+  --mobile-header-height: 60px;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Allow smooth scrolling within pages */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  background-image: linear-gradient(to bottom, var(--background-color), var(--background-alt));
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+  transition: all var(--transition-speed) ease;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  width: 100%;
+  transition: border-color var(--transition-speed) ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+/* Container */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Section Styles */
+section {
+  padding: 4rem 0;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Buttons - Playful Style */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px; /* More rounded for playful look */
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: -1;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  border-radius: 30px;
+}
+
+.btn:hover::before {
+  transform: scale(1);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+}
+
+.btn-primary:hover {
+  background-color: #ff5252;
+  color: var(--light-text-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(255, 107, 107, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--light-text-color);
+}
+
+.btn-secondary:hover {
+  background-color: #3dbdb5;
+  color: var(--light-text-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(78, 205, 196, 0.3);
+}
+
+.btn-accent {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.btn-accent:hover {
+  background-color: #ffc44d;
+  color: var(--text-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(255, 209, 102, 0.3);
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-3, .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 1.2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  section {
+    padding: 3rem 0;
+  }
+
+  .btn {
+    padding: 0.7rem 1.3rem;
+  }
+
+  .main-content {
+    padding-top: 0; /* Remove padding in mobile view */
+  }
+}
+
+@media (max-width: 576px) {
+  .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    gap: 1.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 2rem 0;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  .grid {
+    gap: 1.2rem;
+  }
+
+  section {
+    padding: 1.8rem 0;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Margin utilities */
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-3 {
+  margin-top: 1.5rem;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-1 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.my-2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.my-3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Padding utilities */
+.p-1 {
+  padding: 0.5rem;
+}
+
+.p-2 {
+  padding: 1rem;
+}
+
+.p-3 {
+  padding: 1.5rem;
+}
+
+.p-4 {
+  padding: 2rem;
+}
+
+.px-1 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.px-2 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.px-3 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-1 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.py-2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-3 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Responsive display utilities */
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  .show-on-mobile {
+    display: block !important;
+  }
+
+  .text-center-mobile {
+    text-align: center !important;
+  }
+}
+
+/* Hide on desktop */
+@media (min-width: 769px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+
+  .show-on-desktop {
+    display: block !important;
+  }
+}
+
+/* Main Content Area - Playful Theme */
+.main-content {
+  min-height: calc(100vh - var(--header-height) - 300px); /* Adjust based on footer height */
+  padding-top: var(--header-height);
+  overflow-x: hidden; /* Prevent horizontal scrollbar during animations */
+  background-color: var(--background-color);
+  background-image:
+    linear-gradient(to bottom, var(--background-color), var(--background-alt)),
+    radial-gradient(circle at 10% 20%, rgba(78, 205, 196, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 30%, rgba(255, 209, 102, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 30% 70%, rgba(255, 107, 107, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 70% 90%, rgba(132, 94, 194, 0.05) 0%, transparent 20%);
+  position: relative;
+}
+
+/* Playful background elements */
+.main-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 90% 10%, var(--playful-pink) 0%, var(--playful-pink) 1px, transparent 1px),
+    radial-gradient(circle at 10% 30%, var(--playful-blue) 0%, var(--playful-blue) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, var(--playful-yellow) 0%, var(--playful-yellow) 1px, transparent 1px),
+    radial-gradient(circle at 80% 70%, var(--playful-green) 0%, var(--playful-green) 1px, transparent 1px),
+    radial-gradient(circle at 20% 90%, var(--playful-purple) 0%, var(--playful-purple) 1px, transparent 1px);
+  background-size: 100px 100px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Page Container for Animations */
+.page-container {
+  animation: slideInFromTop 0.3s ease-out forwards;
+  width: 100%;
+  position: relative;
+  will-change: transform, opacity; /* Optimize for animation performance */
+  transform-style: flat; /* Prevent 3D rendering which can cause scrolling issues */
+}
+
+/* Disable animation for product details page */
+.page-container.no-animation {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Ensure product detail pages have no animation */
+.product-page {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Top-to-Bottom Animation */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Add will-change to elements that will be animated */
+.page-container {
+  will-change: transform, opacity;
+}

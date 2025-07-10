@@ -1,0 +1,30 @@
+{
+  "short_name": "MF-Enterprises",
+  "name": "MF-Enterprises - Outdoor Gym & Playground Equipment",
+  "description": "Leading manufacturer of outdoor gym equipment, playground equipment, gazebos, benches, and FRP dustbins with high-quality iron construction and powder coating.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#4a90e2",
+  "background_color": "#ffffff",
+  "categories": ["business", "shopping", "fitness", "outdoor"],
+  "orientation": "any",
+  "lang": "en-US",
+  "dir": "ltr"
+}

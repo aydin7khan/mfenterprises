@@ -1,0 +1,781 @@
+.gallery-container {
+  padding-top: var(--header-height);
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-container {
+    padding-top: 0;
+  }
+}
+
+/* Gallery Hero Section */
+.gallery-hero {
+  height: 350px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/Gallery/Nagpur, Kanhan.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 2rem;
+  position: relative;
+  margin-top: -30px; /* Move gallery hero upward */
+}
+
+.gallery-hero::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  z-index: 1;
+}
+
+.gallery-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-hero p {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 2;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 4rem; /* Increased gap between gallery items */
+  row-gap: 5rem; /* Even larger gap between rows */
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-top: 2rem; /* Added space between hero and grid */
+}
+
+.gallery-item {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.gallery-image {
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover .gallery-image img {
+  transform: scale(1.08);
+}
+
+/* City overlay styling */
+.city-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .city-overlay {
+  opacity: 1;
+}
+
+.city-name {
+  color: white;
+  font-size: 2.2rem;
+  text-align: center;
+  padding: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.gallery-item:hover .city-name {
+  transform: translateY(0);
+}
+
+.gallery-info {
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.gallery-info h3 {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Testimonials Section */
+.gallery-testimonials {
+  padding: 5rem 2rem;
+  background-color: var(--background-color);
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255, 133, 161, 0.08) 0%, transparent 30%),
+    radial-gradient(circle at 90% 30%, rgba(78, 205, 196, 0.08) 0%, transparent 30%),
+    radial-gradient(circle at 50% 70%, rgba(255, 209, 102, 0.08) 0%, transparent 30%);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.gallery-testimonials h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--playful-purple);
+  position: relative;
+  padding-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+.gallery-testimonials h2::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(to right,
+    var(--playful-pink),
+    var(--playful-yellow),
+    var(--playful-green),
+    var(--playful-blue),
+    var(--playful-purple));
+  border-radius: 4px;
+}
+
+.gallery-testimonials h2::after {
+  content: '💬';
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 1.5rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Hide mobile slider in desktop view */
+.gal-testimonials-slider,
+.gal-testimonial-dots {
+  display: none;
+}
+
+.testimonial-stars {
+  padding: 1.5rem 2rem 0;
+  color: #f1c40f;
+  font-size: 1.2rem;
+}
+
+.testimonial-stars i {
+  margin-right: 0.2rem;
+}
+
+.testimonial-content {
+  padding: 1.5rem 2rem;
+  flex-grow: 1;
+  position: relative;
+}
+
+.testimonial-content::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 5rem;
+  color: rgba(0, 0, 0, 0.05);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.testimonial-content p {
+  position: relative;
+  z-index: 1;
+  line-height: 1.8;
+  color: var(--text-color);
+  font-style: italic;
+}
+
+.testimonial-author {
+  padding: 1.5rem 2rem;
+  background-color: #f5f5f5;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-author h4 {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.testimonial-author p {
+  margin: 0.3rem 0 0;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+/* CTA Section */
+.gallery-cta {
+  padding: 5rem 2rem;
+  background-color: #f9f9f9;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.cta-overlay {
+  display: none;
+}
+
+.cta-container {
+  max-width: calc(var(--max-width) - 100px);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(41, 128, 185, 0.3);
+}
+
+.gallery-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-weight: 700;
+}
+
+.gallery-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-button.primary {
+  background-color: white;
+  color: var(--secondary-color);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+}
+
+.cta-button.primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.cta-button.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: white;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .gallery-hero h1 {
+    font-size: 3rem;
+  }
+
+  .city-name {
+    font-size: 2rem;
+  }
+
+  .gallery-testimonials h2,
+  .gallery-cta h2 {
+    font-size: 2.2rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .cta-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .gallery-hero p {
+    font-size: 1.2rem;
+  }
+
+  .gallery-hero {
+    height: 300px;
+    margin-top: 0; /* Remove negative margin in mobile view */
+  }
+
+  .gallery-grid {
+    padding: 2rem 1.5rem;
+    gap: 3rem; /* Maintain larger gap on tablets */
+    row-gap: 4rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    margin-top: 1.5rem;
+  }
+
+  .gallery-image {
+    height: 250px;
+  }
+
+  .city-name {
+    font-size: 1.8rem;
+  }
+
+  .gallery-testimonials {
+    padding: 4rem 1.5rem;
+  }
+
+  .gallery-testimonials h2,
+  .gallery-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .testimonials-grid {
+    gap: 1.5rem;
+  }
+
+  .testimonial-content {
+    padding: 1.5rem;
+  }
+
+  .testimonial-author {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .gallery-cta {
+    padding: 4rem 1.5rem;
+  }
+
+  .cta-container {
+    max-width: calc(100% - 60px);
+    padding: 2.5rem 1.5rem;
+  }
+
+  .gallery-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .cta-buttons {
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .gallery-hero h1 {
+    font-size: 2rem;
+  }
+
+  .gallery-hero p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .gallery-hero {
+    height: 250px;
+    margin-top: 0; /* Remove negative margin in mobile view */
+  }
+
+  .gallery-grid {
+    padding: 1.5rem 1rem;
+    gap: 2.5rem; /* Maintain good spacing on mobile */
+    row-gap: 3.5rem;
+    margin-top: 1rem;
+  }
+
+  .gallery-image {
+    height: 220px;
+  }
+
+  .city-name {
+    font-size: 1.6rem;
+  }
+
+  .gallery-testimonials {
+    padding: 3rem 1rem;
+  }
+
+  .gallery-testimonials h2,
+  .gallery-cta h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .testimonial-content {
+    padding: 1.2rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+
+  .testimonial-author {
+    padding: 1rem 1.2rem;
+  }
+
+  .testimonial-name {
+    font-size: 1.1rem;
+  }
+
+  .testimonial-location {
+    font-size: 0.9rem;
+  }
+
+  /* Gallery Mobile Testimonials Slider */
+  .testimonials-grid {
+    display: none; /* Hide grid in mobile view */
+  }
+
+  .gal-testimonials-slider {
+    display: block;
+    position: relative;
+    padding: 2rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .gal-testimonial {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .gal-testimonial-content {
+    position: relative;
+  }
+
+  .gal-testimonial-stars {
+    margin-bottom: 1rem;
+    color: #f1c40f;
+    font-size: 1rem;
+  }
+
+  .gal-testimonial-stars i {
+    margin-right: 0.2rem;
+  }
+
+  .gal-testimonial-stars i.filled {
+    color: #FFD700;
+  }
+
+  .gal-testimonial-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    font-style: italic;
+  }
+
+  .gal-testimonial-author {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 1rem;
+  }
+
+  .gal-testimonial-author h4 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .gal-testimonial-author p {
+    margin: 0.3rem 0 0;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+  }
+
+  .gal-testimonial-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    outline: none;
+  }
+
+  .gal-testimonial-arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+    border-color: var(--secondary-color);
+    background-color: rgba(52, 152, 219, 0.05);
+  }
+
+  .gal-testimonial-arrow.prev {
+    left: -10px;
+  }
+
+  .gal-testimonial-arrow.next {
+    right: -10px;
+  }
+
+  .gal-testimonial-arrow .gal-custom-arrow-icon {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid var(--primary-color);
+    border-left: 2px solid var(--primary-color);
+    transition: border-color 0.3s ease;
+  }
+
+  .gal-testimonial-arrow.prev .gal-custom-arrow-icon {
+    transform: rotate(-45deg);
+    margin-left: 3px;
+  }
+
+  .gal-testimonial-arrow.next .gal-custom-arrow-icon {
+    transform: rotate(135deg);
+    margin-right: 3px;
+  }
+
+  .gal-testimonial-arrow:hover .gal-custom-arrow-icon {
+    border-color: var(--secondary-color);
+  }
+
+  .gal-testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+  }
+
+  .gal-testimonial-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .gal-testimonial-dot.active {
+    background-color: var(--secondary-color);
+    transform: scale(1.2);
+  }
+
+  .gallery-cta {
+    padding: 3rem 1rem;
+  }
+
+  .cta-container {
+    max-width: calc(100% - 30px);
+    padding: 2rem 1rem;
+  }
+
+  .gallery-cta h2 {
+    font-size: 1.8rem;
+  }
+
+  .gallery-cta p {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gallery-hero {
+    height: 220px;
+    margin-top: 0; /* Remove negative margin in mobile view */
+  }
+
+  .gallery-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .gallery-hero p {
+    font-size: 0.9rem;
+  }
+
+  .gallery-grid {
+    padding: 1.5rem 0.8rem;
+    gap: 2rem;
+    row-gap: 3rem;
+  }
+
+  .gallery-image {
+    height: 200px;
+    border-radius: 8px;
+  }
+
+  .city-name {
+    font-size: 1.4rem;
+  }
+
+  .gallery-testimonials {
+    padding: 2.5rem 0.8rem;
+  }
+
+  .gallery-testimonials h2,
+  .gallery-cta h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .testimonial-stars {
+    font-size: 1rem;
+    padding: 1.2rem 1.5rem 0;
+  }
+
+  .testimonial-content {
+    padding: 1rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.9rem;
+  }
+
+  .testimonial-author {
+    padding: 0.8rem 1rem;
+  }
+
+  .testimonial-name {
+    font-size: 1rem;
+  }
+
+  .testimonial-location {
+    font-size: 0.85rem;
+  }
+
+  .gallery-cta {
+    padding: 2.5rem 0.8rem;
+  }
+
+  .cta-container {
+    max-width: calc(100% - 20px);
+    padding: 1.8rem 1rem;
+    border-radius: 12px;
+  }
+
+  .gallery-cta h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .gallery-cta p {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .cta-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

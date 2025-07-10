@@ -1,0 +1,23 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 2rem;
+}
+
+/* Font Awesome Icons Styling */
+.fas, .fab {
+  display: inline-block;
+}
+
+/* Icon styling for better visibility */
+.cart-icon .fas,
+.remove-cart-item .fas,
+.remove-item .fas {
+  font-size: 1.1em;
+  vertical-align: middle;
+}

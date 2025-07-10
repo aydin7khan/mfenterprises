@@ -1,0 +1,691 @@
+.hmp-home-container {
+  padding-top: 0; /* Hero slider will handle the padding */
+}
+
+/* Featured Products Section */
+.hmp-featured-products {
+  padding: 5rem 2rem;
+  background-color: var(--background-color);
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255, 133, 161, 0.08) 0%, transparent 30%),
+    radial-gradient(circle at 90% 30%, rgba(78, 205, 196, 0.08) 0%, transparent 30%),
+    radial-gradient(circle at 50% 70%, rgba(255, 209, 102, 0.08) 0%, transparent 30%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hmp-featured-products h2 {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  font-size: 2.5rem;
+  color: var(--playful-purple);
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  padding: 0 1rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+.hmp-featured-products h2::before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(to right,
+    var(--playful-pink),
+    var(--playful-yellow),
+    var(--playful-green),
+    var(--playful-blue),
+    var(--playful-purple));
+  border-radius: 4px;
+}
+
+.hmp-featured-products h2::after {
+  content: '✨';
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 1.5rem;
+}
+
+.hmp-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto 2rem;
+}
+
+.hmp-product-card {
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  border: 3px solid transparent;
+}
+
+.hmp-product-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg,
+    var(--playful-pink),
+    var(--playful-yellow),
+    var(--playful-green),
+    var(--playful-blue),
+    var(--playful-purple));
+  z-index: -1;
+  border-radius: 22px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hmp-product-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+  border-color: transparent;
+}
+
+.hmp-product-card:hover::before {
+  opacity: 1;
+}
+
+.hmp-product-image {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hmp-product-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hmp-product-card:hover .hmp-product-image::after {
+  opacity: 1;
+}
+
+.hmp-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.hmp-product-card:hover .hmp-product-image img {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.hmp-product-info {
+  padding: 1.8rem;
+  position: relative;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.hmp-product-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 4px;
+  background: var(--playful-yellow);
+  border-radius: 2px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.hmp-product-card:hover .hmp-product-info::before {
+  opacity: 1;
+  width: 80px;
+}
+
+.hmp-product-info h3 {
+  margin-bottom: 0.8rem;
+  color: var(--playful-purple);
+  font-size: 1.4rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.hmp-product-card:hover .hmp-product-info h3 {
+  color: var(--playful-blue);
+}
+
+.hmp-product-info p {
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.hmp-product-link {
+  color: var(--playful-blue);
+  font-weight: 600;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  background-color: rgba(0, 180, 216, 0.1);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.hmp-product-link::after {
+  content: '→';
+  position: absolute;
+  right: 1rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.hmp-product-link:hover {
+  background-color: var(--playful-blue);
+  color: white;
+  padding-right: 2.2rem;
+  box-shadow: 0 5px 15px rgba(0, 180, 216, 0.3);
+}
+
+.hmp-product-link:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hmp-view-all-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.hmp-view-all-button {
+  display: inline-block;
+  background: linear-gradient(45deg, var(--playful-purple), var(--playful-blue));
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(132, 94, 194, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hmp-view-all-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--playful-blue), var(--playful-purple));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hmp-view-all-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(132, 94, 194, 0.4);
+  color: white;
+}
+
+.hmp-view-all-button:hover::before {
+  opacity: 1;
+}
+
+/* About Preview Section */
+.hmp-about-preview {
+  padding: 5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  align-items: center;
+}
+
+.hmp-about-content h2 {
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  color: var(--playful-pink);
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hmp-about-content h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, var(--playful-pink), var(--playful-purple));
+  border-radius: 4px;
+}
+
+.hmp-about-content p {
+  margin-bottom: 1.8rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 20px;
+}
+
+.hmp-about-content p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--playful-yellow);
+}
+
+.hmp-secondary-button {
+  display: inline-block;
+  background: linear-gradient(45deg, var(--playful-pink), var(--playful-orange));
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(255, 133, 161, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hmp-secondary-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--playful-orange), var(--playful-pink));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hmp-secondary-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(255, 133, 161, 0.4);
+  color: white;
+}
+
+.hmp-secondary-button:hover::before {
+  opacity: 1;
+}
+
+.hmp-about-image {
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+  border: 5px solid white;
+  transform: rotate(2deg);
+  transition: all 0.4s ease;
+}
+
+.hmp-about-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 133, 161, 0.2), transparent);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hmp-about-image:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.hmp-about-image:hover::before {
+  opacity: 1;
+}
+
+.hmp-about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.hmp-about-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Services Section */
+.hmp-services-section {
+  padding: 5rem 2rem;
+  background-color: var(--background-color);
+  background-image:
+    radial-gradient(circle at 80% 10%, rgba(0, 180, 216, 0.08) 0%, transparent 30%),
+    radial-gradient(circle at 20% 40%, rgba(132, 94, 194, 0.08) 0%, transparent 30%),
+    radial-gradient(circle at 60% 80%, rgba(255, 154, 60, 0.08) 0%, transparent 30%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hmp-services-section h2 {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  font-size: 2.5rem;
+  color: var(--playful-blue);
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  padding: 0 1rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+.hmp-services-section h2::before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(to right,
+    var(--playful-blue),
+    var(--playful-green),
+    var(--playful-yellow),
+    var(--playful-orange),
+    var(--playful-pink));
+  border-radius: 4px;
+}
+
+.hmp-services-section h2::after {
+  content: '🎮';
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 1.5rem;
+}
+
+.hmp-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hmp-service-card {
+  background-color: #fff;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hmp-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--playful-pink), var(--playful-blue));
+  transition: height 0.4s ease;
+  z-index: -1;
+}
+
+.hmp-service-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.hmp-service-card:hover::before {
+  height: 100%;
+  opacity: 0.05;
+}
+
+.hmp-service-icon {
+  width: 90px;
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  font-size: 2rem;
+  color: var(--playful-purple);
+  box-shadow: 0 10px 25px rgba(132, 94, 194, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.hmp-service-card:nth-child(1) .hmp-service-icon {
+  color: var(--playful-pink);
+  box-shadow: 0 10px 25px rgba(255, 133, 161, 0.2);
+}
+
+.hmp-service-card:nth-child(2) .hmp-service-icon {
+  color: var(--playful-blue);
+  box-shadow: 0 10px 25px rgba(0, 180, 216, 0.2);
+}
+
+.hmp-service-card:nth-child(3) .hmp-service-icon {
+  color: var(--playful-green);
+  box-shadow: 0 10px 25px rgba(89, 183, 145, 0.2);
+}
+
+.hmp-service-card:hover .hmp-service-icon {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.hmp-service-card h3 {
+  margin-bottom: 1.2rem;
+  color: var(--playful-purple);
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.hmp-service-card:nth-child(1) h3 {
+  color: var(--playful-pink);
+}
+
+.hmp-service-card:nth-child(2) h3 {
+  color: var(--playful-blue);
+}
+
+.hmp-service-card:nth-child(3) h3 {
+  color: var(--playful-green);
+}
+
+.hmp-service-card p {
+  color: var(--text-color);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+}
+
+.hmp-service-card:hover p {
+  color: var(--text-dark);
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+  .hmp-product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .hmp-about-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .hmp-about-image {
+    order: -1;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hmp-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .hmp-featured-products, .hmp-about-preview, .hmp-services-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .hmp-featured-products h2, .hmp-services-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .hmp-about-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .hmp-service-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5rem;
+  }
+
+  .hmp-service-card h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hmp-product-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hmp-featured-products, .hmp-about-preview, .hmp-services-section {
+    padding: 3rem 1rem;
+  }
+
+  .hmp-about-image {
+    height: 250px;
+  }
+
+  .hmp-service-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .hmp-featured-products h2, .hmp-services-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .hmp-about-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .hmp-about-content p {
+    font-size: 0.95rem;
+  }
+
+  .hmp-service-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .hmp-service-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hmp-product-grid {
+    gap: 1.2rem;
+  }
+
+  .hmp-featured-products, .hmp-about-preview, .hmp-services-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .hmp-featured-products h2, .hmp-services-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hmp-about-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hmp-about-image {
+    height: 220px;
+  }
+
+  .hmp-service-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .hmp-service-card {
+    padding: 1.8rem 1.2rem;
+  }
+
+  .hmp-service-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .hmp-product-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .hmp-product-info p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+}

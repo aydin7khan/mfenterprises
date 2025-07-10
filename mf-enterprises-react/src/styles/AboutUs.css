@@ -1,0 +1,1125 @@
+.about-us-container {
+  padding-top: var(--header-height);
+}
+
+@media screen and (max-width: 768px) {
+  .about-us-container {
+    padding-top: 0;
+  }
+}
+
+/* About Hero Section */
+.about-hero {
+  height: 400px;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/images/Contact-About/AboutUs.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 2rem;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Company Overview Section */
+.company-overview {
+  padding: 5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  align-items: center;
+  position: relative;
+  background-color: var(--background-color);
+}
+
+.company-overview::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.02), rgba(44, 62, 80, 0.02));
+  z-index: 0;
+}
+
+.overview-content {
+  position: relative;
+  z-index: 1;
+}
+
+.overview-content h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.overview-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--theme-gradient-2);
+  border-radius: 3px;
+}
+
+.overview-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+
+.overview-image {
+  height: 400px;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--border-color);
+}
+
+.overview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.overview-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Mission Vision Section */
+.mission-vision {
+  padding: 5rem 2rem;
+  background-color: var(--background-alt);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+.mission-vision::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/Contact-About/AboutUs.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.mission, .vision {
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--border-color);
+}
+
+.mission h2, .vision h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.mission h2::after, .vision h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 2px;
+  background-color: var(--secondary-color);
+}
+
+.mission p, .vision p {
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+/* Our Values Section */
+.our-values {
+  padding: 5rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background-color: var(--background-color);
+  position: relative;
+}
+
+.our-values::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.03), rgba(44, 62, 80, 0.03));
+  z-index: 0;
+}
+
+.our-values h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  position: relative;
+  z-index: 1;
+}
+
+.our-values h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--theme-gradient-2);
+  border-radius: 3px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.value-card {
+  padding: 2.5rem 2rem;
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--theme-gradient-2);
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--card-shadow);
+}
+
+.value-card h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+}
+
+.value-card p {
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* Manufacturing Process Section */
+.manufacturing {
+  padding: 5rem 2rem;
+  background: var(--theme-gradient-1);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.manufacturing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/Contact-About/AboutUs.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.manufacturing h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.2rem;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.manufacturing h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--theme-accent);
+  border-radius: 3px;
+}
+
+.manufacturing-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.manufacturing-text {
+  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.manufacturing-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.manufacturing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1.8rem;
+  border-radius: var(--card-radius);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background-color: var(--theme-accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.step-content h3 {
+  margin-bottom: 0.8rem;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.step-content p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* Our Team Section */
+.our-team {
+  padding: 5rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background-color: var(--background-alt);
+  position: relative;
+}
+
+.our-team::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.03), rgba(44, 62, 80, 0.03));
+  z-index: 0;
+}
+
+.our-team h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.our-team h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--secondary-color);
+}
+
+.team-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* CEO Section */
+.ceo-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin: 0 auto 4rem;
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  position: relative;
+  z-index: 1;
+}
+
+.ceo-content {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ceo-content h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.ceo-content h4 {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.ceo-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+.ceo-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.ceo-contact a {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.ceo-contact a i {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+}
+
+.ceo-contact a:hover {
+  color: var(--secondary-color);
+  transform: translateX(5px);
+}
+
+.ceo-image {
+  height: 100%;
+  overflow: hidden;
+}
+
+.ceo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ceo-section:hover .ceo-image img {
+  transform: scale(1.05);
+}
+
+/* Team Members Heading */
+.team-members-heading {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.team-members-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--secondary-color);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.team-card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  will-change: transform, box-shadow;
+  border: 1px solid var(--border-color);
+  position: relative;
+  z-index: 1;
+}
+
+.team-card-image {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-card-image img {
+  transform: scale(1.08);
+}
+
+.team-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1.5rem;
+}
+
+.team-card:hover .team-overlay {
+  opacity: 1;
+}
+
+.team-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.team-social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.team-card:hover .team-social a {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover .team-social a:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.team-card:hover .team-social a:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.team-social a:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+.team-card-content {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: var(--card-bg);
+  position: relative;
+}
+
+.team-card-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--secondary-color);
+}
+
+.team-card-content h3 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.team-card-content h4 {
+  font-size: 1rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.team-card-content p {
+  line-height: 1.7;
+  color: var(--text-color);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* Team CTA Section */
+.team-cta {
+  margin-top: 4rem;
+  text-align: center;
+  background: var(--theme-gradient-2);
+  padding: 3rem;
+  border-radius: var(--card-radius);
+  box-shadow: 0 15px 40px rgba(52, 152, 219, 0.2);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.team-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../assets/images/Contact-About/AboutUs.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.team-cta h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.team-cta p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.team-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  color: var(--secondary-color);
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-cta-button:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.team-cta-button i {
+  transition: transform 0.3s ease;
+}
+
+.team-cta-button:hover i {
+  transform: translateX(5px);
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+  .company-overview, .mission-vision {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .overview-image {
+    order: -1;
+    height: 300px;
+  }
+
+  .about-hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .about-hero p {
+    font-size: 1.1rem;
+  }
+
+  .company-overview, .mission-vision, .our-values, .manufacturing, .our-team {
+    padding: 4.5rem 2rem;
+  }
+
+  .values-grid {
+    gap: 1.8rem;
+  }
+
+  .manufacturing-steps {
+    gap: 1.5rem;
+  }
+
+  .ceo-section {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .ceo-image {
+    order: -1;
+    height: 350px;
+  }
+
+  .ceo-content {
+    padding: 2.5rem;
+  }
+
+  .ceo-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .team-card-image {
+    height: 280px;
+  }
+
+  .team-members-heading {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-hero {
+    height: 350px;
+  }
+
+  .company-overview, .mission-vision, .our-values, .manufacturing, .our-team {
+    padding: 4rem 1.5rem;
+  }
+
+  .overview-content h2, .mission-content h2, .vision-content h2, .our-values h2, .manufacturing h2, .our-team h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .team-card-image {
+    height: 250px;
+  }
+
+  .team-card-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .team-card-content h4 {
+    font-size: 1rem;
+  }
+
+  .team-intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .ceo-content {
+    padding: 2rem;
+  }
+
+  .ceo-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .ceo-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .ceo-image {
+    height: 300px;
+  }
+
+  .team-members-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .overview-content p, .mission-content p, .vision-content p {
+    font-size: 0.95rem;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .value-card {
+    padding: 1.8rem;
+  }
+
+  .value-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .value-card p {
+    font-size: 0.95rem;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .step-content p {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero {
+    height: 300px;
+  }
+
+  .about-hero p {
+    font-size: 1rem;
+  }
+
+  .company-overview, .mission-vision, .our-values, .manufacturing, .our-team {
+    padding: 3rem 1rem;
+  }
+
+  .overview-image {
+    height: 250px;
+  }
+
+  .overview-content h2, .mission-content h2, .vision-content h2, .our-values h2, .manufacturing h2, .our-team h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .team-card-image {
+    height: 220px;
+  }
+
+  .team-card-content {
+    padding: 1.5rem;
+  }
+
+  .team-social a {
+    width: 35px;
+    height: 35px;
+  }
+
+  .our-team {
+    padding: 4rem 1rem;
+  }
+
+  .ceo-content {
+    padding: 1.8rem;
+  }
+
+  .ceo-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .ceo-content p {
+    font-size: 0.95rem;
+  }
+
+  .ceo-image {
+    height: 250px;
+  }
+
+  .team-members-heading {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .value-card {
+    padding: 1.5rem;
+  }
+
+  .manufacturing-steps {
+    gap: 2rem;
+  }
+
+  .manufacturing-step {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .step-number {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-hero {
+    height: 250px;
+  }
+
+  .about-hero p {
+    font-size: 0.9rem;
+  }
+
+  .company-overview, .mission-vision, .our-values, .manufacturing, .our-team {
+    padding: 2.5rem 1rem;
+  }
+
+  .overview-content h2, .mission-content h2, .vision-content h2, .our-values h2, .manufacturing h2, .our-team h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .overview-content p, .mission-content p, .vision-content p, .value-card p, .step-content p, .team-card-content p {
+    font-size: 0.9rem;
+  }
+
+  .team-card-image {
+    height: 200px;
+  }
+
+  .team-card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .team-card-content h4 {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .team-social a {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .team-intro {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .our-team {
+    padding: 3rem 1rem;
+  }
+
+  .team-card-content p {
+    font-size: 0.9rem;
+  }
+
+  .ceo-content {
+    padding: 1.5rem;
+  }
+
+  .ceo-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .ceo-content h4 {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .ceo-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .ceo-image {
+    height: 220px;
+  }
+
+  .ceo-contact a {
+    font-size: 0.9rem;
+  }
+
+  .team-members-heading {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .team-cta {
+    padding: 2rem 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .team-cta h3 {
+    font-size: 1.5rem;
+  }
+
+  .team-cta p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .overview-image {
+    height: 200px;
+  }
+
+  .value-card h3, .step-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .step-number {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+  }
+
+  .team-cta {
+    padding: 1.5rem 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .team-cta h3 {
+    font-size: 1.3rem;
+  }
+
+  .team-cta p {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .team-cta-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

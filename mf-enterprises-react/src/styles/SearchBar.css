@@ -1,0 +1,145 @@
+/* Search Bar Styles for Products Page */
+.products-search-container {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.products-search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 30px;
+  padding: 0.5rem 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  max-width: 600px;
+  border: 2px solid var(--border-color);
+}
+
+.products-search-bar:focus-within {
+  border-color: var(--accent-color);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.products-search-input {
+  background: transparent;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.products-search-input::placeholder {
+  color: #aaa;
+}
+
+.products-search-icon {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.products-search-icon:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.products-search-clear {
+  color: #aaa;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.products-search-clear:hover {
+  color: var(--primary-color);
+}
+
+/* Search Results Label */
+.search-results-label {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Products Search Loading */
+.products-search-loading {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.products-search-loading .search-loader {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid var(--secondary-color);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: products-search-spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+.products-search-loading span {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes products-search-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 992px) {
+  .products-search-bar {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .products-search-container {
+    margin-bottom: 1rem;
+  }
+
+  .products-search-bar {
+    width: 80%;
+    padding: 0.4rem 1rem;
+  }
+
+  .products-search-input {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .products-search-bar {
+    width: 90%;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .products-search-input {
+    font-size: 0.85rem;
+    padding: 0.3rem;
+  }
+
+  .products-search-icon {
+    font-size: 1rem;
+  }
+}
